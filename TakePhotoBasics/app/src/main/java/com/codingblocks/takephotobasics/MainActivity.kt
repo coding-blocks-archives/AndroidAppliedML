@@ -9,6 +9,7 @@ import android.provider.MediaStore
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import com.codingblocks.takephotobasics.barcode.BarcodeActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -31,6 +32,10 @@ class MainActivity : AppCompatActivity() {
 
         btnCameraActivity.setOnClickListener {
             startActivity(Intent(this, CameraActivity::class.java))
+        }
+
+        btnBarcodeActivity.setOnClickListener {
+            startActivity(Intent(this, BarcodeActivity::class.java))
         }
     }
 
