@@ -15,8 +15,14 @@
             android:layout_height="200dp"/>
 
     <Button
-            android:id="@+id/btnTakePhoto"
-            android:text="Take Photo"
+            android:id="@+id/btnTakeExtPhoto"
+            android:text="Take Photo (External Camera)"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <Button
+            android:id="@+id/btnCameraActivity"
+            android:text="Open Camera Activity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 </LinearLayout>
