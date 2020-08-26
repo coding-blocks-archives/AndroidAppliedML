@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.codingblocks.takephotobasics.barcode.BarcodeActivity
+import com.codingblocks.takephotobasics.facedetect.FaceDetectActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -36,6 +37,10 @@ class MainActivity : AppCompatActivity() {
 
         btnBarcodeActivity.setOnClickListener {
             startActivity(Intent(this, BarcodeActivity::class.java))
+        }
+
+        btnFaceDetectActivity.setOnClickListener {
+            startActivity(Intent(this, FaceDetectActivity::class.java))
         }
     }
 

@@ -2,6 +2,7 @@ package com.codingblocks.takephotobasics
 
 import android.Manifest
 import android.content.pm.PackageManager
+import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -11,7 +12,7 @@ import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import kotlinx.android.synthetic.main.activity_barcode.*
+import kotlinx.android.synthetic.main.activity_lens.*
 
 abstract class BaseLensActivity : AppCompatActivity() {
     companion object {
@@ -23,15 +24,14 @@ abstract class BaseLensActivity : AppCompatActivity() {
     abstract val imageAnalyzer: ImageAnalysis.Analyzer
     protected lateinit var imageAnalysis: ImageAnalysis
 
-    protected fun askCameraPermission() {
+    private fun askCameraPermission() {
         ActivityCompat.requestPermissions(
             this,
             arrayOf(Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE),
             CAMERA_PERM_CODE
         )
     }
-
-    protected fun startCamera() {
+    private fun startCamera() {
         val cameraProviderFuture = ProcessCameraProvider.getInstance(this)
         cameraProviderFuture.addListener(
             Runnable {
@@ -60,6 +60,18 @@ abstract class BaseLensActivity : AppCompatActivity() {
 
         )
 
+    }
+
+    abstract fun startScanner()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_lens)
+        askCameraPermission()
+
+        btnStartScanner.setOnClickListener {
+            startScanner()
+        }
     }
 
     override fun onRequestPermissionsResult(
