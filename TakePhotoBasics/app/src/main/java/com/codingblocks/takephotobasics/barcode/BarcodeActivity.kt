@@ -12,56 +12,13 @@ import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.codingblocks.takephotobasics.BaseLensActivity
 import com.codingblocks.takephotobasics.R
 import kotlinx.android.synthetic.main.activity_barcode.*
 
-class BarcodeActivity : AppCompatActivity() {
-    companion object {
-        @JvmStatic
-        val CAMERA_PERM_CODE = 422
-    }
+class BarcodeActivity : BaseLensActivity() {
 
-    private val imageAnalyzer =  BarcodeAnalyzer()
-    private lateinit var imageAnalysis: ImageAnalysis
-
-    private fun askCameraPermission() {
-        ActivityCompat.requestPermissions(
-            this,
-            arrayOf(Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE),
-            CAMERA_PERM_CODE
-        )
-    }
-
-    private fun startCamera() {
-        val cameraProviderFuture = ProcessCameraProvider.getInstance(this)
-        cameraProviderFuture.addListener(
-            Runnable {
-                val cameraProvider = cameraProviderFuture.get()
-
-                val preview = Preview.Builder()
-                    .build()
-                    .also {
-                        it.setSurfaceProvider(previewBarcode.createSurfaceProvider())
-                    }
-
-                imageAnalysis = ImageAnalysis.Builder()
-                    .build()
-
-                val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
-
-                try {
-                    cameraProvider.unbindAll()
-                    cameraProvider.bindToLifecycle(this, cameraSelector, preview, imageAnalysis)
-                } catch (ex: Exception) {
-                    Log.e("CAM", "Error bindind camera", ex)
-                }
-
-            },
-            ContextCompat.getMainExecutor(this)
-
-        )
-
-    }
+    override val imageAnalyzer =  BarcodeAnalyzer()
 
     private fun scanBarcode() {
 
