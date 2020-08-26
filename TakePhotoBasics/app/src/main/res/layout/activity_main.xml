@@ -1,45 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_gravity="center"
         android:gravity="center"
+        android:orientation="vertical"
         tools:context=".MainActivity">
 
     <ImageView
             android:id="@+id/imgThumb"
             android:layout_width="200dp"
-            android:layout_height="200dp"/>
+            android:layout_height="200dp" />
 
     <Button
             android:id="@+id/btnTakeExtPhoto"
-            android:text="Take Photo (External Camera)"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Take Photo (External Camera)" />
 
     <Button
             android:id="@+id/btnCameraActivity"
-            android:text="Open Camera Activity"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Open Camera Activity" />
 
     <Button
             android:id="@+id/btnBarcodeActivity"
-            android:text="Open Barcode Activity"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Open Barcode Activity" />
+
     <Button
             android:id="@+id/btnFaceDetectActivity"
-            android:text="Open Face Detect Activity"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Open Face Detect Activity" />
 
     <Button
             android:id="@+id/btnLabelerActivity"
-            android:text="Open Image Label Activity"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Open Image Label Activity" />
+
+    <Button
+            android:id="@+id/btnTextRecogActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Open Text Recognition Activity" />
 </LinearLayout>

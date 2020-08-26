@@ -16,6 +16,7 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.TakePhotoBasics">
+        <activity android:name=".textrecog.TextRecognitionActivity"/>
         <activity android:name=".imagelabeler.ImageLabelingActivity" />
         <activity android:name=".facedetect.FaceDetectActivity"></activity>
         <activity android:name=".barcode.BarcodeActivity" />
@@ -27,6 +28,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+                android:name="com.google.mlkit.vision.DEPENDENCIES"
+                android:value="ocr" />
+
     </application>
 
 </manifest>

@@ -12,6 +12,7 @@ import androidx.core.app.ActivityCompat
 import com.codingblocks.takephotobasics.barcode.BarcodeActivity
 import com.codingblocks.takephotobasics.facedetect.FaceDetectActivity
 import com.codingblocks.takephotobasics.imagelabeler.ImageLabelingActivity
+import com.codingblocks.takephotobasics.textrecog.TextRecognitionActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -46,7 +47,10 @@ class MainActivity : AppCompatActivity() {
 
         btnLabelerActivity.setOnClickListener {
             startActivity(Intent(this, ImageLabelingActivity::class.java))
+        }
 
+        btnTextRecogActivity.setOnClickListener {
+            startActivity(Intent(this, TextRecognitionActivity::class.java))
         }
     }
 
