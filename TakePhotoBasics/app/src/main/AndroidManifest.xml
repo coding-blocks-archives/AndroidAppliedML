@@ -16,6 +16,7 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.TakePhotoBasics">
+        <activity android:name=".imagelabeler.ImageLabelingActivity" />
         <activity android:name=".facedetect.FaceDetectActivity"></activity>
         <activity android:name=".barcode.BarcodeActivity" />
         <activity android:name=".CameraActivity" />

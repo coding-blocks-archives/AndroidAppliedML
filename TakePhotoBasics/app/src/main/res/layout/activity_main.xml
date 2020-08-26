@@ -36,4 +36,10 @@
             android:text="Open Face Detect Activity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+
+    <Button
+            android:id="@+id/btnLabelerActivity"
+            android:text="Open Image Label Activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 </LinearLayout>

@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.codingblocks.takephotobasics.barcode.BarcodeActivity
 import com.codingblocks.takephotobasics.facedetect.FaceDetectActivity
+import com.codingblocks.takephotobasics.imagelabeler.ImageLabelingActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -41,6 +42,11 @@ class MainActivity : AppCompatActivity() {
 
         btnFaceDetectActivity.setOnClickListener {
             startActivity(Intent(this, FaceDetectActivity::class.java))
+        }
+
+        btnLabelerActivity.setOnClickListener {
+            startActivity(Intent(this, ImageLabelingActivity::class.java))
+
         }
     }
 
